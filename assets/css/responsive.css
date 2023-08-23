@@ -1,0 +1,13 @@
+@media screen and (max-width: 576px) {
+    section {
+        height: 100% !important;
+    }
+
+    .wrapper {
+        width: 100% !important
+    }
+
+    section {
+        margin-top: calc(2 * var(--default-space));
+    }
+}
