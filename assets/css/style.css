@@ -1,77 +1,139 @@
-@charset "UTF-8";
-@import "responsive.css";
-
-:root {
+@import url("responsive.css"); :root {
     --primary-font: 'Nunito Sans', sans-serif;
     --secondary-font: 'Montserrat', sans-serif;
-    --primary-color: red;
+    --primary-color: #1A2421;
     --secondary-color: blue;
     --black: #363a42;
-    --white: white;
+    --white: #ddd;
     --default-space: 1.618rem;
+    --default-font-size: 16px;
 }
 
 body {
+    background-color: rgb(0, 0, 0);
+    /* background-image: linear-gradient(334deg, rgb(0, 0, 0) 0%, rgb(0, 51, 85) 74%); */
+    background: linear-gradient(to right bottom, #003355, #20243e, #211828, #180e15, #000000);
     font-family: var(--primary-font) !important;
-    background: var(--black);
+    color: var(--white) !important;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--secondary-font) !important;
+h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     letter-spacing: 3px;
+    font-family: var(--secondary-font) !important;
 }
 
 a {
+    padding: 1px 3px 2px 3px;
     font-family: var(--secondary-font) !important;
-    text-decoration: none;
-    color: var(--black) !important
-}
-
-h1 {
-    font-size: calc(2.5 * var(--default-space)) !important
-}
-
-h2 {
-    font-size: calc(1.5 * var(--default-space)) !important
-}
-
-h3 {
-    font-size: calc(1 * var(--default-space)) !important
+    color: var(--white) !important;
+    text-decoration: none !important;
+    border-bottom: 2px solid #003355;
 }
 
 p {
-    margin : 0 !important
+    margin: 0px !important;
 }
 
+p, a , div , span, article, main {
+    line-height: calc(1.2 * var(--default-space));
+    font-size: var(--default-font-size);
+}
+
+hr {
+    border: none !important;
+    margin-top: calc(0.8 * var(--default-space)) !important;
+    margin-bottom: calc(0.4 * var(--default-space)) !important;
+}
+
+hr::before {
+    content: "*";
+    font-size: 25px;
+    display: block;
+    text-align: center;
+}
+
+#me {
+    animation: lights 8s 750ms linear infinite;
+}
+
+@keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+  }
+
 section {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
 }
 
+section > * {
+    width: 100%;
+    display: block !important;
+}
+
 .wrapper {
-    width: 60%
+    padding: var(--default-space);
+    max-width: 700px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    margin: calc(3 * var(--default-space)) auto;
 }
 
-.divider {
-    display: block;
-    width : 120px;
-    height : 1px;
-    margin: var(--default-space) 0;
-    background: linear-gradient(to right, #ccc, transparent)
+.work > div {
+    background-color: rgb(0 0 0 / 10%);
+    border-radius: 20px;
+    padding: calc(1 * var(--default-space));
 }
 
-#me {
-    background-color: #004b49;
-    background-image: linear-gradient(90deg, #004b49 0%, #2e0e36 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.work > div + div {
+    margin-top: var(--default-space);
 }
