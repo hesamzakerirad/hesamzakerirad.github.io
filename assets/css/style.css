@@ -25,6 +25,17 @@ body {
     z-index: 1;
 }
 
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
+}
+
 h1,
 h2,
 h3,
@@ -75,6 +86,34 @@ hr::before {
     animation: lights 8s 750ms linear infinite;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+section > * {
+    width: 100%;
+    display: block !important;
+}
+
+.wrapper {
+    padding: var(--default-space);
+    max-width: 700px;
+    margin: calc(3 * var(--default-space)) auto;
+}
+
+.work > div {
+    background-color: rgb(0 0 0 / 10%);
+    border-radius: 20px;
+    padding: calc(1 * var(--default-space));
+}
+
+.work > div + div {
+    margin-top: var(--default-space);
+}
+
 @keyframes lights {
     0% {
         color: hsl(230, 40%, 80%);
@@ -84,7 +123,6 @@ hr::before {
             -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
             1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
     }
-
     30% {
         color: hsl(230, 80%, 90%);
         text-shadow:
@@ -93,7 +131,6 @@ hr::before {
             -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
             0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
     }
-
     40% {
         color: hsl(230, 100%, 95%);
         text-shadow:
@@ -102,7 +139,6 @@ hr::before {
             -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
             0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
     }
-
     70% {
         color: hsl(230, 80%, 90%);
         text-shadow:
@@ -111,7 +147,6 @@ hr::before {
             0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
             -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
     }
-
     100% {
         color: hsl(230, 40%, 80%);
         text-shadow:
@@ -119,58 +154,5 @@ hr::before {
             0 0 0.125em hsla(320, 100%, 60%, 0.3),
             1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
             -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
-    }
-
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-}
-
-section>* {
-    width: 100%;
-    display: block !important;
-}
-
-.wrapper {
-    padding: var(--default-space);
-    max-width: 700px;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    margin: calc(3 * var(--default-space)) auto;
-}
-
-.work>div {
-    background-color: rgb(0 0 0 / 10%);
-    border-radius: 20px;
-    padding: calc(1 * var(--default-space));
-}
-
-.work>div+div {
-    margin-top: var(--default-space);
-}
-
-
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
-}
-
-@keyframes expand {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.5);
     }
 }
