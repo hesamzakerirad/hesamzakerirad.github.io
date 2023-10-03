@@ -49,3 +49,7 @@ section > * {
 .terminal-prompt {
     white-space: unset !important
 }
+
+footer > ul {
+    margin-top: 0;
+}
