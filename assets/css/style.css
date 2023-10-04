@@ -17,33 +17,11 @@ main {
     line-height: var(--default-space);
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-}
-
-section > * {
-    width: 100%;
-    display: block !important;
-}
-
 .wrapper {
     padding: 0 var(--default-space);
     max-width: 700px;
     margin-right: auto;
     margin-left: auto;
-}
-
-.work > div {
-    background-color: rgb(0 0 0 / 10%);
-    border-radius: 20px;
-    padding: calc(1 * var(--default-space));
-}
-
-.work > div + div {
-    margin-top: var(--default-space);
 }
 
 .terminal-prompt {
