@@ -7,8 +7,16 @@
     --font-color: #eee !important
 }
 
-p {
-    margin: 0px !important;
+h1 {
+    font-size: calc(0.9 * var(--default-space)) !important
+}
+
+h2 {
+    font-size: calc(0.8 * var(--default-space)) !important
+}
+
+h3 {
+    font-size: calc(0.7 * var(--default-space)) !important
 }
 
 p,
@@ -17,12 +25,13 @@ div,
 span,
 article,
 main {
-    line-height: var(--default-space);
+    line-height: var(--default-space) !important;
 }
 
 .wrapper {
     padding: 0 var(--default-space);
     max-width: 700px;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
 }
