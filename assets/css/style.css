@@ -2,6 +2,9 @@
 
 :root { 
     --default-space: 1.618rem;
+    --primary-color: rgb(0 210 120) !important;
+    --background-color: rgb(33, 33, 33) !important;
+    --font-color: #eee !important
 }
 
 p {
