@@ -1,4 +1,4 @@
-:root { 
+:root {
     --default-space: 1.618rem;
     --primary-color: rgb(0 210 120) !important;
     --background-color: rgb(33, 33, 33) !important;
@@ -47,4 +47,24 @@ main {
 
 .links a {
     margin: 0 var(--global-space)
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero > p {
+    margin : 0
+}
+
+@media (max-width: 576px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero p {
+        margin: 0 0 var(--global-line-height);
+    }
 }
