@@ -1,6 +1,4 @@
-@import url("responsive.css");
-
-:root { 
+:root {
     --default-space: 1.618rem;
     --primary-color: rgb(0 210 120) !important;
     --background-color: rgb(33, 33, 33) !important;
@@ -40,6 +38,33 @@ main {
     white-space: unset !important
 }
 
-footer > ul {
-    margin-top: 0;
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 calc(var(--global-space) * 4) 0;
+}
+
+.links a {
+    margin: 0 var(--global-space)
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero > p {
+    margin : 0
+}
+
+@media (max-width: 576px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero p {
+        margin: 0 0 var(--global-line-height);
+    }
 }
